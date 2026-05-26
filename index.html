@@ -1,0 +1,353 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --page-bg: var(--color-background-primary);
+    --text-primary: var(--color-text-primary);
+    --text-secondary: var(--color-text-secondary);
+    --text-tertiary: var(--color-text-tertiary);
+    --border: var(--color-border-tertiary);
+    --border-em: var(--color-border-secondary);
+    --accent: #185FA5;
+    --accent-light: #E6F1FB;
+    --tag-bg: var(--color-background-secondary);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body, .lp-root {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+    background: transparent;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .lp-root { padding: 0 0 4rem; }
+
+  .section { padding: 2.5rem 0; border-bottom: 0.5px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-tertiary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  /* HERO */
+  .hero { padding: 2.5rem 0 2.5rem; }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    max-width: 560px;
+  }
+  .hero-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    background: var(--tag-bg);
+    border: 0.5px solid var(--border-em);
+    border-radius: 4px;
+    padding: 3px 10px;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+
+  /* PROBLEM */
+  .problem-body {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 580px;
+    line-height: 1.7;
+  }
+  .problem-body p { margin-bottom: 0.75rem; }
+  .problem-body p:last-child { margin-bottom: 0; }
+
+  /* WHAT IT DOES */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    border: 0.5px solid var(--border);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-top: 0.25rem;
+  }
+  .module-cell {
+    padding: 1.1rem 1.25rem;
+    background: var(--color-background-primary);
+    border: none;
+  }
+  .module-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+  }
+  .module-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+  }
+  .module-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* HOW I BUILT IT */
+  .build-body {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 580px;
+    line-height: 1.7;
+  }
+  .build-body p { margin-bottom: 0.75rem; }
+  .build-body p:last-child { margin-bottom: 0; }
+  .inline-callout {
+    background: var(--color-background-secondary);
+    border-left: 2px solid var(--accent);
+    border-radius: 0;
+    padding: 0.85rem 1.1rem;
+    margin-top: 1.25rem;
+    max-width: 580px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* RESULT */
+  .result-card {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--border-em);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem 1.5rem;
+    max-width: 560px;
+  }
+  .result-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .result-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.65rem;
+    line-height: 1.3;
+  }
+  .result-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ROADMAP */
+  .roadmap-list {
+    list-style: none;
+    max-width: 560px;
+    margin-top: 0.25rem;
+  }
+  .roadmap-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+  .roadmap-list li:last-child { border-bottom: none; }
+  .roadmap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .roadmap-title {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    font-size: 14px;
+  }
+
+  /* PIVOT */
+  .pivot-body {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .contact-line {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+
+<div class="lp-root">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">VCP Trading System — project landing page for Solutions Engineer hiring managers</h2>
+
+  <!-- 01 HERO -->
+  <div class="section hero">
+    <div class="section-label">01 — why this exists</div>
+    <h1 class="hero-headline">
+      Most tools tell you what to trade.<br>I built one that tells me when, why, and whether I'm ready.
+    </h1>
+    <p class="hero-desc">
+      The VCP Trading System is a full-stack stock screening and trade management application — built from scratch — that identifies institutional-quality momentum setups from the S&P 500, scores them against a rigorous 100-point model, and walks me through every decision from initial signal to final exit.
+    </p>
+    <div class="hero-meta">
+      <span class="tag">Built Apr – May 2026</span>
+      <span class="tag">Python · Streamlit · SQLite</span>
+      <span class="tag">~8,700 lines · single file</span>
+      <span class="tag">Live on localhost</span>
+    </div>
+  </div>
+
+  <!-- 02 THE PROBLEM -->
+  <div class="section">
+    <div class="section-label">02 — the problem</div>
+    <div class="problem-body">
+      <p>I was screening stocks manually — a combination of TradingView watch lists, spreadsheets tracking position sizing, and a notes app for pre-trade reasoning. Each tool did one thing adequately and none of them talked to each other.</p>
+      <p>The real problem was decision lag: by the time I'd pulled price data, checked my sizing rules, reviewed the chart, and written down my reasoning, 20 minutes had passed and the moment had either passed or I'd talked myself into a worse trade. The process was leaky enough that I couldn't tell whether a bad outcome came from a bad setup or a bad decision.</p>
+      <p>The specific moment that tipped me was realising I had no reliable way to answer "what made this trade worth taking?" after the fact. The data was scattered across three tools and my own memory. I needed one system that captured the full chain — from signal to sizing to outcome — in a form I could actually learn from.</p>
+    </div>
+  </div>
+
+  <!-- 03 WHAT IT DOES -->
+  <div class="section">
+    <div class="section-label">03 — what it does</div>
+    <div class="modules-grid">
+      <div class="module-cell">
+        <div class="module-num">01</div>
+        <div class="module-name">Screener</div>
+        <div class="module-desc">Runs every S&P 500 stock through ten structural filters, then scores each survivor on a 100-point model. What comes out the other end is a ranked shortlist of setups worth looking at — not a raw list of 500 stocks.</div>
+      </div>
+      <div class="module-cell">
+        <div class="module-num">02</div>
+        <div class="module-name">Watchlist</div>
+        <div class="module-desc">Tracks shortlisted stocks in real time — proximity to entry, volume behaviour, pattern health. It flags when a setup is tightening toward the trigger so I'm not manually checking charts every hour.</div>
+      </div>
+      <div class="module-cell">
+        <div class="module-num">03</div>
+        <div class="module-name">Pre-trade checklist</div>
+        <div class="module-desc">Before any position is opened, the system calculates risk-reward, position size, and target levels automatically. The checklist enforces that the trade passes a defined standard before I act — removing the "gut feel override" problem.</div>
+      </div>
+      <div class="module-cell">
+        <div class="module-num">04</div>
+        <div class="module-name">Position tracker</div>
+        <div class="module-desc">Live P&L, alert engine, and exit tracking per lot. It records market conditions and emotional state at entry — because I want to know eventually whether my worst trades happen on the same day I override my own process.</div>
+      </div>
+      <div class="module-cell">
+        <div class="module-num">05</div>
+        <div class="module-name">Performance archive</div>
+        <div class="module-desc">Closed trades with full analytics — win rate, average risk multiple, outcome by market condition. The point isn't to track returns. It's to have enough data to know what to improve next.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 HOW I BUILT IT -->
+  <div class="section">
+    <div class="section-label">04 — how I built it</div>
+    <div class="build-body">
+      <p>The stack is Python 3.12, Streamlit for the interface, SQLite for persistence, and yfinance plus a financial data API for market and fundamentals data. Everything lives in a single ~8,700-line file — a deliberate choice for a solo build where simplicity outweighs modularity. Version-controlled on GitHub throughout.</p>
+      <p>I used Claude Code as the primary development environment and Cursor as an AI-assisted IDE alongside it — not to generate code I didn't understand, but to compress the feedback loop between "I want this to behave differently" and "it does." I'd write the logic and spec the behaviour; the tools helped me implement and debug faster than I could alone. The architecture, the decisions, and the mistakes are all mine.</p>
+      <p>The iteration loop was roughly weekly: run the screener, review candidates against real charts, find where the model disagreed with reality, trace the cause, and adjust. Most calibration work happened through a standalone diagnostic script that let me test individual tickers against the detection logic in isolation — which kept the main app stable while I was experimenting.</p>
+    </div>
+    <div class="inline-callout">
+      The hardest thing to figure out: the screener was surfacing setups with technically valid stop levels that were economically useless — the model was locking onto old tight bases from lower price levels, weeks or months after a large rally had made them irrelevant. Diagnosing it required building a 12-case backtest harness and tracing exactly which calculation was anchoring to the wrong reference point. The fix was architectural: changing how the pivot detector identifies swing points. It's the kind of issue that's invisible until you've tested it against real data across enough different scenarios.
+    </div>
+  </div>
+
+  <!-- 05 ONE CONCRETE RESULT -->
+  <div class="section">
+    <div class="section-label">05 — one concrete result</div>
+    <div class="result-card">
+      <div class="result-label">Calibration finding — April 2026</div>
+      <div class="result-headline">The breakout filter was the primary bottleneck — and the data made it obvious.</div>
+      <div class="result-body">
+        Early screener runs were returning almost no candidates. Systematic one-change-at-a-time testing revealed that a 5% breakout filter — originally intended to exclude stocks that had already moved — was eliminating the majority of viable setups before they ever reached scoring. A single threshold change to 10% tripled the candidate yield without degrading setup quality. That finding led to a broader recalibration pass: the RS percentile hard gate was restructured from a binary SPY comparison to a universe-ranked composite, the scoring weights were redistributed across five components, and three additional hard filters were added. None of that would have been diagnosable without the diagnostic tooling or the structured screener run history.
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 WHAT'S NEXT -->
+  <div class="section">
+    <div class="section-label">06 — what's next</div>
+    <ul class="roadmap-list">
+      <li>
+        <div class="roadmap-dot" aria-hidden="true"></div>
+        <div>
+          <div class="roadmap-title">Live calibration period</div>
+          Running the screener consistently for 4–6 weeks, logging all candidates and outcomes, and building enough real data to make confident structural changes rather than speculative ones.
+        </div>
+      </li>
+      <li>
+        <div class="roadmap-dot" aria-hidden="true"></div>
+        <div>
+          <div class="roadmap-title">Zigzag pivot detector</div>
+          Replacing the fixed rolling-window pivot detection with a percentage-based swing detector — the highest-leverage architectural improvement identified, deferred until live data confirms it's the right priority.
+        </div>
+      </li>
+      <li>
+        <div class="roadmap-dot" aria-hidden="true"></div>
+        <div>
+          <div class="roadmap-title">Fundamentals scoring layer</div>
+          Wiring in the FMP API for earnings growth, revenue growth, and return on equity — currently scaffolded in the scoring model but not yet live in screener runs due to data source limitations.
+        </div>
+      </li>
+      <li>
+        <div class="roadmap-dot" aria-hidden="true"></div>
+        <div>
+          <div class="roadmap-title">Order preparation module</div>
+          Structured order ticket generation — translating the pre-trade checklist output into a ready-to-review order spec, as a first step toward execution integration.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 07 THE PIVOT -->
+  <div class="section">
+    <div class="section-label">07 — why this matters for SE roles</div>
+    <div class="pivot-body">
+      Building this system taught me something I'd suspected but can now demonstrate: the hardest part of any tool isn't the technology, it's understanding the real workflow well enough to know what the tool actually needs to do. Every meaningful improvement in this project came from using it — running real screener outputs, tracing where the model disagreed with my own judgment, and working backwards to the cause. That cycle — deploy, observe, diagnose, improve — is exactly what good solutions engineering looks like in practice. I'm not looking to be handed a spec. I'm drawn to the part of the role where you figure out what the spec should have been.
+    </div>
+    <div class="contact-line">
+      <a href="mailto:jessica.mak216@hotmail.com">jessica.mak216@hotmail.com</a>
+    </div>
+  </div>
+</div>
