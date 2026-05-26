@@ -231,10 +231,10 @@
       The VCP Trading System is a full-stack stock screening and trade management application — built from scratch — that identifies institutional-quality momentum setups from the S&P 500, scores them against a rigorous 100-point model, and walks me through every decision from initial signal to final exit.
     </p>
     <div class="hero-meta">
-      <span class="tag">Built Apr – May 2026</span>
+      <span class="tag">Built Mar – May 2026</span>
       <span class="tag">Python · Streamlit · SQLite</span>
       <span class="tag">~8,700 lines · single file</span>
-      <span class="tag">Live on localhost</span>
+      <span class="tag">codebase on GitHub</span>
     </div>
   </div>
 
@@ -300,8 +300,8 @@
       <div class="result-label">Calibration finding — April 2026</div>
       <div class="result-headline">The breakout filter was the primary bottleneck — and the data made it obvious.</div>
       <div class="result-body">
-        Early screener runs were returning almost no candidates. Systematic one-change-at-a-time testing revealed that a 5% breakout filter — originally intended to exclude stocks that had already moved — was eliminating the majority of viable setups before they ever reached scoring. A single threshold change to 10% tripled the candidate yield without degrading setup quality. That finding led to a broader recalibration pass: the RS percentile hard gate was restructured from a binary SPY comparison to a universe-ranked composite, the scoring weights were redistributed across five components, and three additional hard filters were added. None of that would have been diagnosable without the diagnostic tooling or the structured screener run history.
-      </div>
+       The screener was returning almost no candidates in early runs. Systematic one-change-at-a-time testing made the cause clear: a single threshold was eliminating the majority of viable setups before they ever reached scoring.
+        A single threshold change to 10% tripled the candidate yield without degrading setup quality. That finding led to a broader recalibration pass: the RS percentile hard gate was restructured from a binary SPY comparison to a universe-ranked composite, the scoring weights were redistributed across five components, and three additional hard filters were added. None of that would have been diagnosable without the diagnostic tooling or the structured screener run history.
     </div>
   </div>
 
